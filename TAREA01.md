@@ -667,3 +667,36 @@ eigen() y det()**
     ##          [,1]
     ## [1,] 3.333333
     ## [2,] 2.666667
+
+**13. Corre el siguiente código para cargar los vectores year y co2 en memoria**
+
+``` r
+load(url("https://goo.gl/uDzU8v"))      
+      data(co2)
+      means = aggregate(co2, FUN=mean)
+      year = as.vector(time(means))
+      co2 = as.vector(means)
+```
+**13.a.**
+``` r
+load(url("https://goo.gl/uDzU8v"))
+data(co2)
+means = aggregate(co2, FUN=mean)
+year = as.vector(time(means))
+co2 = as.vector(means)
+y <- c(0, diff(co2))
+plot(year,y, type = "o", pch = 20, xlab = "Años", ylab = "Diferencia de concentración de CO2", 
+main = "Diferencias de CO2 entre años consecutivos", col = "blue", font = 2)
+```
+**13.b.** 
+``` r
+load(url("https://goo.gl/uDzU8v"))
+data(co2)
+means = aggregate(co2, FUN=mean)
+year = as.vector(time(means))
+co2 = as.vector(means)
+y <- c(0, diff(co2))
+plot(year, y, xlim=c(1959, 2020), type = "o", pch = 20, xlab = "Años", ylab = "Diferencia de concentración de CO2", 
+main = "Diferencias de CO2 entre años consecutivos", col = "blue", font = 2)
+points(2020, 2.64, pch = 4, col = "red")
+```

@@ -669,32 +669,53 @@ eigen() y det()**
     ## [2,] 2.666667
 
 **13. Corre el siguiente código para cargar los vectores year y co2 en memoria**
-
-``` r
-load(url("https://goo.gl/uDzU8v"))      
+```{r}
       data(co2)
       means = aggregate(co2, FUN=mean)
       year = as.vector(time(means))
       co2 = as.vector(means)
 ```
-**13.a.**
-``` r
-load(url("https://goo.gl/uDzU8v"))
-data(co2)
-means = aggregate(co2, FUN=mean)
-year = as.vector(time(means))
-co2 = as.vector(means)
-y <- c(0, diff(co2))
-plot(year,y, type = "o", pch = 20, xlab = "Años", ylab = "Diferencia de concentración de CO2", main = "Diferencias de CO2 entre años consecutivos", col = "blue", font = 2)
+**13.a.** *El vector co2 contiene medidas de CO2 en la atmósfera, en unidades de ppm, durante el periodo 1959-1997. El vector year contiene sus años correspondientes.*
+```{r}
+      co2
+      year
 ```
-**13.b.** 
-``` r
-load(url("https://goo.gl/uDzU8v"))
-data(co2)
-means = aggregate(co2, FUN=mean)
-year = as.vector(time(means))
-co2 = as.vector(means)
-y <- c(0, diff(co2))
-plot(year, y, xlim=c(1959, 2020), type = "o", pch = 20, xlab = "Años", ylab = "Diferencia de concentración de CO2", main = "Diferencias de CO2 entre años consecutivos", col = "blue", font = 2)
-points(2020, 2.64, pch = 4, col = "red")
+**13.b.** *Calcular un vector de diferencias de CO2 entre años consecutivos*
+```{r}
+    diff(co2)
+      c(0, diff(co2))
+      y <- c(0, diff(co2))
+      y
+```
+**13.c.** *Crear un plot con lineas y puntos mostrando las diferencias consecutivas de CO2 en función del tiempo (1960, 1961, etc…), en negrita*
+```{r}
+    plot(year, y, type = "o", pch = 20, xlab = "Años",
+           ylab = "Diferencia de concentracion de CO2", 
+           main = "Variacion entre años", col = "blue", font = 2)
+```
+
+**13.d.** *La diferencia de concentración de CO2 entre 2020 y 2019 fue igual a 2.64. Agregar un punto rojo representando esa diferencia al plot ya creado (usar una forma diferente, como pch=4)*
+```{r}
+    plot(year, y, xlim = c(1959, 2020) , type = "o", pch = 20,
+           xlab = "Años", ylab = "Diferencia de concentracion de CO2", 
+           main = "Variacion entre años", col = "blue", font = 2)
+      points(2020, 2.64, pch = 4, col = "red")
+```
+
+**14.a.** *Lee el archivo rainfall.csv como un data.framet*
+```{r}
+read.csv("C:/Users/HP/Downloads/rainfall.csv")
+      library(readxl)
+```
+
+**14.b.** *Calcula e imprime un vector con los nombres de las estaciones donde al menos uno de los meses tiene una precipitación superior a 180mm.*
+```{r}
+teamdf <- read.csv("C:/Users/HP/Downloads/rainfall.csv")
+      read.csv("C:/Users/HP/Downloads/rainfall.csv")
+      precipitacion <- teamdf[(teamdf$sep > 180) | (teamdf$oct > 180) | 
+                              (teamdf$nov > 180) | (teamdf$dec > 180) | 
+                              (teamdf$jan > 180) | (teamdf$feb > 180) | 
+                              (teamdf$mar > 180) | (teamdf$apr > 180) | 
+                              (teamdf$may > 180),]      
+      precipitacion$name
 ```

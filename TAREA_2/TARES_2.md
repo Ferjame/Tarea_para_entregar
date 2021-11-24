@@ -323,4 +323,27 @@ row.names(mtcars)[which(mtcars$wt >2,5 & mtcars$am =="1")]
     ## [25] "Ford Pantera L"      "Ferrari Dino"        "Maserati Bora"      
     ## [28] "Volvo 142E"
 
-**16**
+**16. La ecuacíon de tiempo es la diferencia entre el tiempo solar medio
+y el tiempo solar aparente. Si bien esta var ́ıa, la forma anal ́ıtica
+de esta ecuaci ́on se muestra a continuaci ́on (Usr x como un rango de 0
+a 365). Replicar el gráfico: **
+
+``` r
+x <- 0:365
+y <- 2*pi*(x-81)/365
+
+Funcion01 <- function(y) {
+  x <- (9.87*2*sin(y)*cos(y))-(7.53*cos(y))-(1.5*sin(y))
+  return(x)
+}
+
+x <-seq(as.Date("2021-01-01"), as.Date("2022-01-01"), "day")
+
+plot(x, Funcion01(y), ylab = "Minutos", xlab = "Meses", col ="red", type = "l", lwd = 3, lty = 2)
+
+mtext("Mathematical Astronomy Morsels, Jean Meeus. 1997", side = 3, adj = 0)
+
+title("Ecuación del tiempo", adj = 0.000001, line = 1.5)
+```
+
+![](TARES_2_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->

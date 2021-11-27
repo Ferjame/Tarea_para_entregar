@@ -67,7 +67,7 @@ vector_1ro[which(A == TRUE)]
 
 ``` r
 B <- which(vector_2do >10)
-vector_2do[c(4,5)]
+vector_2do[B]
 ```
 
     ## [1] 15 20
@@ -286,7 +286,7 @@ mtcars
 de combustible.*
 
 ``` r
-row.names(mtcars)[which(mtcars$mpg <18)]
+row.names(mtcars)[which(mtcars$mpg < 18)]
 ```
 
     ##  [1] "Duster 360"          "Merc 280C"           "Merc 450SE"         
@@ -309,24 +309,16 @@ row.names(mtcars)[which(mtcars$cyl == 4)]
 manual.*
 
 ``` r
-row.names(mtcars)[which(mtcars$wt >2,5 & mtcars$am =="1")]
+row.names(mtcars)[which(mtcars$wt > 2.5 & mtcars$am == "1")]
 ```
 
-    ##  [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"         
-    ##  [4] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
-    ##  [7] "Duster 360"          "Merc 240D"           "Merc 230"           
-    ## [10] "Merc 280"            "Merc 280C"           "Merc 450SE"         
-    ## [13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood" 
-    ## [16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"           
-    ## [19] "Toyota Corona"       "Dodge Challenger"    "AMC Javelin"        
-    ## [22] "Camaro Z28"          "Pontiac Firebird"    "Porsche 914-2"      
-    ## [25] "Ford Pantera L"      "Ferrari Dino"        "Maserati Bora"      
-    ## [28] "Volvo 142E"
+    ## [1] "Mazda RX4"      "Mazda RX4 Wag"  "Ford Pantera L" "Ferrari Dino"  
+    ## [5] "Maserati Bora"  "Volvo 142E"
 
 **16. La ecuacíon de tiempo es la diferencia entre el tiempo solar medio
 y el tiempo solar aparente. Si bien esta var ́ıa, la forma anal ́ıtica
 de esta ecuaci ́on se muestra a continuaci ́on (Usr x como un rango de 0
-a 365). Replicar el gráfico: **
+a 365). Replicar el gráfico:**
 
 ``` r
 x <- 0:365
@@ -347,3 +339,5 @@ title("Ecuación del tiempo", adj = 0.000001, line = 1.5)
 ```
 
 ![](TARES_2_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+
+## EXITOS

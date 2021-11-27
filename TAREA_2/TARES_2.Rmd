@@ -166,7 +166,7 @@ mtcars
 
 **15.a.** *Autos que tengan un rendimiento menor a 18 millas por galón de combustible.*
 ```{r}
-row.names(mtcars)[which(mtcars$mpg <18)]
+row.names(mtcars)[which(mtcars$mpg < 18)]
 ```
 
 **15.b.** *Autos que tengan 4 cilindros.*
@@ -176,7 +176,7 @@ row.names(mtcars)[which(mtcars$cyl == 4)]
 
 **15.c.** *Autos que pesen más de 2500 libras y tengan transmisión manual.*
 ```{r}
-row.names(mtcars)[which(mtcars$wt >2,5 & mtcars$am =="1")]
+row.names(mtcars)[which(mtcars$wt > 2.5 & mtcars$am == "1")]
 ```
 
 **16. La ecuacíon de tiempo es la diferencia entre el tiempo solar medio y el tiempo solar aparente. Si bien esta var ́ıa, la forma anal ́ıtica de esta ecuaci ́on se muestra a continuaci ́on (Usr x como un rango de 0 a 365). Replicar el gráfico:**
